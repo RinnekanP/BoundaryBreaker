@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boundary Breaker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000000;
+            color: #0000FF;
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #0000FF;
+            padding-bottom: 10px;
+        }
+        
+        .blog-title {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        
+        .blog-subtitle {
+            font-size: 16px;
+            color: #0000FF;
+            opacity: 0.8;
+        }
+        
+        .blog-posts {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .blog-post {
+            border: 2px solid #0000FF;
+            padding: 25px;
+            position: relative;
+            transition: all 0.3s ease;
+            word-wrap:break-word;
+            overflow-wrap:break-word;
+        }
+        
+        .blog-post:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 255, 0.3);
+        }
+        
+        .date {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #0000FF;
+        }
+        
+        .content {
+            font-size: 16px;
+            white-space: pre-wrap;
+            word-break:break-all;
+            
+        }
+        
+        .separator {
+            height: 1px;
+            background-color: #0000FF;
+            margin: 15px 0;
+        }
+        
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 14px;
+            color: #0000FF;
+            opacity: 0.7;
+            padding-top: 20px;
+            border-top: 1px solid #0000FF;
+        }
+        
+        .edit-note {
+            font-size: 12px;
+            color: #0000FF;
+            opacity: 0.5;
+            margin-top: 30px;
+            padding: 10px;
+            border: 1px dashed #0000FF;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .blog-post {
+                padding: 15px;
+            }
+            
+            .blog-title {
+                font-size: 24px;
+            }
+            .personal-link {
+    color: #0000FF;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 8px 15px;
+    border: 1px solid #0000FF;
+    transition: all 0.3s ease;
+}
+
+.personal-link:hover {
+    background-color: #0000FF;
+    color: #000000;
+    text-decoration: none;
+}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <a href="https://rinnekanp.github.io/placeholder.rinnekan.github.io/"class="personal-link"target="_blank">:3c</a>
+        
+        <main class="blog-posts">
+        
+        <article class="blog-post">
+                <div class="date">2025-12-29</div>
+                <div class="separator"></div>
+                <div class="content">
+刚刚刷到说精神分裂症患者因为常感觉到被注视着所以会画很多眼睛。
+突然想起来etr403大概也算有很多眼睛。
+跟精神分裂或许没什么关系，我只是单纯喜欢眼睛。
+
+...
+
+etr403从人体里涌出来的部分本体*或许*会跟随本能把无人认领的食物吞掉（除了眼球以外当然都是正常食物，除了苦瓜和胡萝卜。这两个东西没有人爱吃。），吞掉眼球之后本体的眼睛数量会增加对应的数量。
+                </div>
+            </article>
+            
+            <article class="blog-post">
+                <div class="date">2025-12-29</div>
+                <div class="separator"></div>
+                <div class="content">
+一条好像太空了点，再写一条（
+发帖语言说不定会很混乱。
+中日英估计都有，
+大概。
+说不定会把音游成绩发上来。
+
+顺便挂个Discord链接...
+https://discord.com/invite/Kqr3uKHyds
+                </div>
+            </article>
+            <article class="blog-post">
+                <div class="date">2025-12-29</div>
+                <div class="separator"></div>
+                <div class="content">
+纯纯的测试帖。
+
+可能会用来发泄，但更新只能编辑html重新上传至github的话也太麻烦了。
+
+上传功能太麻烦了，不想弄。
+之后先写进手机自带的笔记再转过来吧。
+
+
+
+以及这里出现的所有提示都不是我自己手写的，至少让AI修饰过。
+                </div>
+            </article>
+        </main>
+        
+        
+        <footer>
+            <p> | 最終更新時間:2025-12-29</p>
+        </footer>
+    </div>
+    
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const blogPosts = document.querySelectorAll('.blog-post');
+            
+            blogPosts.forEach(post => {
+
+                post.addEventListener('click', function() {
+                    this.style.borderColor = '#66f';
+                    setTimeout(() => {
+                        this.style.borderColor = '#0000FF';
+                    }, 300);
+                });
+                
+
+                const dateElement = post.querySelector('.date');
+                const dateText = dateElement.textContent;
+                dateElement.title = `发布于: ${dateText}`;
+            });
+            
+            const editNote = document.querySelector('.edit-note');
+            editNote.addEventListener('click', function() {
+                alert('要编辑博客，请用文本编辑器打开此HTML文件，找到<article>标签，修改其中的内容即可。');
+            });
+        });
+    </script>
+</body>
+</html>
